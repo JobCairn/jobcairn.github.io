@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to install JobCairn on your Mac</title>
+  <meta name="description" content="Download and install JobCairn on macOS 13 or later: the first open, Claude setup, and the optional Chrome and Gmail connections.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0d0e11" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://jobcairn.github.io/install.html">
+  <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="public/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JobCairn">
+  <meta property="og:title" content="How to install JobCairn on your Mac">
+  <meta property="og:description" content="Download, first open, Claude setup, and the optional Chrome and Gmail connections.">
+  <meta property="og:url" content="https://jobcairn.github.io/install.html">
+  <meta property="og:image" content="https://jobcairn.github.io/public/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The JobCairn home screen for a fictional example workspace, with the pipeline and sponsorship mix.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to install JobCairn on your Mac">
+  <meta name="twitter:description" content="Download, first open, Claude setup, and the optional Chrome and Gmail connections.">
+  <meta name="twitter:image" content="https://jobcairn.github.io/public/og.png">
+  <meta name="twitter:image:alt" content="The JobCairn home screen for a fictional example workspace, with the pipeline and sponsorship mix.">
+  <link rel="preload" href="public/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="public/fonts/geist-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="public/css/site.css?v=fb4c34a9">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://jobcairn.github.io/install.html#webpage",
+      "url": "https://jobcairn.github.io/install.html",
+      "name": "How to install JobCairn on your Mac",
+      "description": "Download and install JobCairn on macOS 13 or later: the first open, Claude setup, and the optional Chrome and Gmail connections.",
+      "inLanguage": "en-AU",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://jobcairn.github.io/#website",
+        "url": "https://jobcairn.github.io/",
+        "name": "JobCairn"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://jobcairn.github.io/#org",
+        "name": "JobCairn",
+        "url": "https://jobcairn.github.io/",
+        "logo": "https://jobcairn.github.io/public/icon-512.png",
+        "sameAs": [
+          "https://github.com/JobCairn",
+          "https://github.com/JobCairn/jobcairn"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "JobCairn",
+          "item": "https://jobcairn.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Install JobCairn",
+          "item": "https://jobcairn.github.io/install.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="JobCairn home"><img src="public/favicon.svg" alt="" width="28" height="28">JobCairn</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="./#how">How it works</a>
+        <a href="./#features">Features</a>
+        <a href="./#privacy">Privacy</a>
+        <a class="nav-install" href="install.html" aria-current="page">Install<span class="nav-install__more"> guide</span></a>
+        <a href="./#faq">FAQ</a>
+        <a class="btn btn--primary btn--sm" href="https://github.com/JobCairn/jobcairn/releases/latest">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero hero--page" aria-labelledby="install-title">
+      <div class="wrap">
+        <div class="hero__copy">
+          <h1 id="install-title">Install JobCairn.</h1>
+          <p class="hero__lead">JobCairn runs on your Mac and does its work through your own Claude plan. <strong>Only Claude is required. Chrome, Gmail and the voice are optional.</strong></p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="https://github.com/JobCairn/jobcairn/releases/latest">Download for macOS</a>
+            <a class="btn btn--secondary" href="#first-open">How to open it the first time</a>
+          </div>
+          <p class="hero__meta">Windows and Linux coming soon. Using a coding agent? <a href="#agent">Get the install prompt</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="requirements" aria-labelledby="req-title">
+      <div class="wrap install">
+        <div class="section__head">
+          <h2 id="req-title">Before you start.</h2>
+        </div>
+        <dl class="facts facts--grid">
+          <div><dt>macOS 13 (Ventura) or later</dt><dd>On an Apple silicon or Intel Mac. To check, open the Apple menu › About This Mac.</dd></div>
+          <div><dt>A Claude plan that includes Claude Code</dt><dd>Claude does the reading and writing through your own account. Its usage counts toward your plan.</dd></div>
+          <div><dt>Google Chrome (optional)</dt><dd>Only if you want JobCairn to read job boards in your own browser.</dd></div>
+          <div><dt>A Gmail account (optional)</dt><dd>Only if you want job email filed under each job and replies drafted for you.</dd></div>
+        </dl>
+        <p class="install__aside">By installing JobCairn you agree to the <a href="terms.html">terms of use</a>. The <a href="privacy.html">Privacy</a> page explains what the app keeps on your Mac and what it sends to Claude.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="agent" aria-labelledby="agent-title">
+      <div class="wrap install">
+        <div class="section__head">
+          <h2 id="agent-title">Install with a coding agent.</h2>
+          <p>Use Claude Code, Codex, Cursor or another coding agent? Paste this prompt into it. The agent follows the same steps as the guide below, asks before it installs anything, never handles your passwords, and leaves signing in to you. Read the prompt before you run it.</p>
+        </div>
+        <div class="prompt">
+          <div class="prompt__bar">
+            <span class="prompt__label">Install prompt</span>
+            <button type="button" class="btn btn--secondary btn--sm" data-copy="agent-prompt" hidden>Copy prompt</button>
+            <span class="visually-hidden" aria-live="polite" data-copy-status></span>
+          </div>
+<pre class="prompt__body" id="agent-prompt" tabindex="0" aria-label="Install prompt"><code>Help me install JobCairn on this Mac. Before each step that downloads, installs or changes anything, show me the command and wait for my OK.
+
+1. Check that macOS is 13 or later (sw_vers -productVersion). Stop if it is older. Check for Apple silicon with sysctl -n hw.optional.arm64 (1 means Apple silicon; 0 or nothing means Intel).
+2. Find the latest release at https://github.com/JobCairn/jobcairn/releases/latest (https://api.github.com/repos/JobCairn/jobcairn/releases/latest lists its files). Pick JobCairn-&lt;version&gt;-arm64.dmg for Apple silicon, or JobCairn-&lt;version&gt;-x64.dmg for Intel.
+3. Download that .dmg and SHA256SUMS.txt from the same release into ~/Downloads with curl. Check the .dmg with shasum -a 256 against its line in SHA256SUMS.txt. If they don't match, stop, delete the .dmg and tell me.
+4. Mount the .dmg with hdiutil, copy JobCairn.app to /Applications, then unmount it. If copying asks for a password, stop and tell me.
+5. Check for node (22 or later), Python 3.11 to 3.14 (python3.11 to python3.14; 3.15 isn't supported yet) and ffmpeg. Install only the ones that are missing or too old, with brew install node, brew install python@3.12 or brew install ffmpeg. If Homebrew isn't installed, stop and give me the official command from https://brew.sh to run myself, because it asks for my Mac password.
+6. If the claude command is missing, install Claude Code with Anthropic's official command: curl -fsSL https://claude.ai/install.sh | bash (if https://docs.claude.com/en/docs/claude-code/setup shows a different command, show me both and wait for my choice).
+7. Check the app's signature, read-only: codesign --verify --deep --strict /Applications/JobCairn.app and spctl --assess --type execute -vv /Applications/JobCairn.app. If either check fails, stop and tell me. Don't remove the quarantine attribute (no xattr) and don't change any security settings. Then tell me to open JobCairn from Applications myself. macOS may ask once if I'm sure I want to open it.
+8. Never type or ask for passwords, app passwords or API keys. I'll sign in to Claude myself, in JobCairn under Settings › Connections.
+
+When you're done, list what you installed and what was already there.</code></pre>
+        </div>
+        <p class="install__aside">Video tools still need the steps in <a href="#extras">Extra tools</a>. A built-in installer is on the way.</p>
+      </div>
+    </section>
+
+    <section class="section" id="steps" aria-labelledby="steps-title">
+      <div class="wrap install">
+        <div class="section__head">
+          <h2 id="steps-title">Seven steps, three of them optional.</h2>
+        </div>
+
+        <ol class="isteps">
+          <li class="istep" id="download">
+            <h3>Download the right file</h3>
+            <p>Open the <a href="https://github.com/JobCairn/jobcairn/releases/latest">latest release</a> and download one file:</p>
+            <ul>
+              <li><code>JobCairn-&lt;version&gt;-arm64.dmg</code> if About This Mac shows <strong>Chip</strong> (Apple M1 or later).</li>
+              <li><code>JobCairn-&lt;version&gt;-x64.dmg</code> if it shows <strong>Processor</strong> (Intel).</li>
+            </ul>
+            <p>Before you open it, you can <a href="#verify">check the download</a>.</p>
+            <p class="istep__note">JobCairn is new, so your browser may warn that the file isn't commonly downloaded. Keep it only if you got it from <code>github.com/JobCairn/jobcairn/releases</code>, and check the download before you open it.</p>
+          </li>
+
+          <li class="istep">
+            <h3>Move it to Applications</h3>
+            <p>Open the <code>.dmg</code>, drag JobCairn into the Applications folder, then eject the disk image.</p>
+          </li>
+
+          <li class="istep" id="first-open">
+            <h3>Open it the first time</h3>
+            <p>JobCairn is signed with an Apple Developer ID and notarised by Apple, so macOS checks it before the first open.</p>
+            <ol class="substeps">
+              <li>Open JobCairn from Applications.</li>
+              <li>macOS says JobCairn was downloaded from the internet and asks if you're sure you want to open it. Click <strong>Open</strong>.</li>
+            </ol>
+            <p>You only see this once. After that, JobCairn opens like any other app.</p>
+            <p class="istep__note">If macOS says it can't check JobCairn for malicious software, or that the app is damaged, don't open it. Delete it, then download it again from our releases page and <a href="#verify">check the download</a>. Apple explains these messages in <a href="https://support.apple.com/en-au/102445" rel="noopener">Safely open apps on your Mac</a>.</p>
+          </li>
+
+          <li class="istep">
+            <h3>Set up Claude</h3>
+            <p>Install Claude Code with <a href="https://docs.claude.com/en/docs/claude-code/setup" rel="noopener">Anthropic's installer</a>. Then, in JobCairn, open Settings › Connections and choose <strong>Set up</strong> next to Claude. The app checks that Claude Code is installed, opens Terminal so you can sign in to your own Claude account, and runs a short test in an empty folder. JobCairn never sees your login.</p>
+          </li>
+
+          <li class="istep">
+            <span class="istep__tag">Optional</span>
+            <h3>Explore the example</h3>
+            <p>On the first screen, choose <strong>Try example</strong> to open a made-up job search for Alex Example. Each page offers a short tour, and the help button (?) at the foot of the sidebar starts one any time. When you're ready, choose <strong>Start fresh</strong> to set up your own.</p>
+          </li>
+
+          <li class="istep">
+            <span class="istep__tag">Optional</span>
+            <h3>Connect Chrome</h3>
+            <p>To search SEEK, LinkedIn, Indeed and other boards in your own Chrome, open Settings › Connections › Search in my Chrome. It walks you through installing the browser helper (about 118 MB), turning on Chrome's remote control, and connecting. Searches only read ads. They never apply or message anyone.</p>
+          </li>
+
+          <li class="istep">
+            <span class="istep__tag">Optional</span>
+            <h3>Connect Gmail</h3>
+            <p>Open Settings › Connections › Email (Gmail). You turn on 2-Step Verification, create an app password, check that IMAP is on, then test the connection. Job emails are then filed under each job. Nothing is sent without your OK.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="extras" aria-labelledby="extras-title">
+      <div class="wrap install">
+        <div class="section__head">
+          <h2 id="extras-title">Extra tools for some features.</h2>
+          <p>A few features need extra tools on your Mac. In early access you install them yourself with <a href="https://brew.sh" rel="noopener">Homebrew</a> in Terminal. A built-in installer is on the way.</p>
+        </div>
+        <div class="tools" role="region" aria-labelledby="extras-title" tabindex="0">
+          <table>
+            <thead>
+              <tr><th scope="col">Feature</th><th scope="col">Needs</th><th scope="col">How</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Search in my Chrome</th><td data-label="Needs">Google Chrome, Node.js 22 or later</td><td data-label="How"><code>brew install node</code>, then <strong>Install helper</strong> in the app</td></tr>
+              <tr><th scope="row">Listen (on-device voice)</th><td data-label="Needs">Python 3.11 to 3.14 (3.15 isn't supported yet), ffmpeg</td><td data-label="How"><code>brew install python@3.12</code> and <code>brew install ffmpeg</code>, then Settings › Voice › <strong>Install voice</strong> (about 200 MB)</td></tr>
+              <tr><th scope="row">Videos</th><td data-label="Needs">The voice above, the HyperFrames renderer and a captions model (about 140 MB)</td><td data-label="How">The Videos screen checks each tool and lists what's missing</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="install__aside">Video setup is the roughest part of early access. If you get stuck, <a href="https://github.com/JobCairn/jobcairn/discussions">ask in Discussions</a>.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="verify" aria-labelledby="verify-title">
+      <div class="wrap install">
+        <div class="section__head">
+          <h2 id="verify-title">Verify your download.</h2>
+          <p>Each release lists a SHA-256 checksum for every file, so you can confirm yours arrived unchanged.</p>
+        </div>
+        <ol class="substeps substeps--wide">
+          <li>From the same release, open <code>SHA256SUMS.txt</code>.</li>
+          <li>In Terminal, run:
+            <pre class="cmd"><code>shasum -a 256 ~/Downloads/JobCairn-*.dmg</code></pre></li>
+          <li>Compare the result with the line for your file. If they differ, don't open it. Delete it and download it again.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="help" aria-labelledby="help-title">
+      <div class="wrap contact">
+        <div class="section__head">
+          <h2 id="help-title">Stuck?</h2>
+          <p>Ask in GitHub Discussions. Questions and answers stay there, so the next person can find them too.</p>
+        </div>
+        <div class="contact__card">
+          <div class="contact__actions">
+            <a class="btn btn--primary" href="https://github.com/JobCairn/jobcairn/discussions">Ask a question</a>
+            <a class="btn btn--secondary" href="./#faq">Read the FAQ</a>
+          </div>
+          <p class="contact__note"><strong>Discussions are public.</strong> Don't post your email, phone or resume.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <div>
+        <a class="brand" href="./"><img src="public/favicon.svg" alt="" width="28" height="28">JobCairn</a>
+        <p class="tagline">Your job search, in one folder on your computer.</p>
+        <p>© 2026 JobCairn</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="./#how">How it works</a>
+        <a href="./#features">Features</a>
+        <a href="install.html">Install</a>
+        <a href="./#faq">FAQ</a>
+        <a href="https://github.com/JobCairn/jobcairn/discussions">GitHub Discussions</a>
+        <a href="https://github.com/JobCairn/jobcairn"><span aria-hidden="true">⭐ </span>Star on GitHub</a>
+        <a href="terms.html">Terms of use</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+      <p class="fine">Claude and Claude Code are trademarks of Anthropic. macOS is a trademark of Apple. SEEK, LinkedIn and Indeed are trademarks of their owners; JobCairn isn't affiliated with or endorsed by any of them. Fonts: <a href="public/fonts/OFL-instrument-serif.txt">Instrument Serif</a> and <a href="public/fonts/OFL-geist.txt">Geist</a>, under the SIL Open Font License.</p>
+    </div>
+  </footer>
+  <script>
+    // Copy button for the install prompt. Without JavaScript the prompt stays a selectable block.
+    document.querySelectorAll("[data-copy]").forEach(function (b) {
+      var status = b.parentNode.querySelector("[data-copy-status]");
+      if (!navigator.clipboard) return;
+      b.hidden = false;
+      b.addEventListener("click", function () {
+        navigator.clipboard.writeText(document.getElementById(b.dataset.copy).innerText).then(function () {
+          b.textContent = "Copied"; status.textContent = "Prompt copied";
+          setTimeout(function () { b.textContent = "Copy prompt"; status.textContent = ""; }, 2000);
+        }, function () { status.textContent = "Copy didn't work. Select the prompt and copy it."; });
+      });
+    });
+  </script>
+</body>
+</html>

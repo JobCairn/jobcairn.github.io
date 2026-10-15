@@ -1,0 +1,35 @@
+# JobCairn
+
+> JobCairn is a desktop app for macOS that keeps your whole job search in one folder on your computer. Claude, through the user's own Claude account, finds jobs, scores fit, reads each ad for visa sponsorship wording and tailors resumes and cover letters. The user approves everything before it is sent.
+
+Who it's for: job seekers who want one place for their search, and people who need visa sponsorship (it was built for people who need sponsorship in Australia).
+
+What it does:
+
+- Finds jobs in the user's own Chrome on job boards such as SEEK, LinkedIn and Indeed and on company career pages, read-only, and saves each ad into the workspace folder. It doesn't apply or message anyone.
+- Scores fit for each job, with interview odds, each must-have marked met, partial or not met with the evidence line, and a recommendation: apply, tailor first, or skip.
+- Reads each ad for work-rights wording (sponsorship offered, open to visa holders, silent, or citizens and PR only) and gives a sponsor score. It reports what ads and public sources say. It isn't migration advice.
+- Tailors a resume to a job using only what's already in the user's resume and profile, with 17 templates (the ATS-safe ones are one column), and exports PDF or Word. Drafts a matching cover letter.
+- Tracks applications from preparing, to waiting for the user's OK, to sent. With Gmail connected, job email is filed under the right job.
+- Prepares for interviews: skill gaps across saved jobs, study guides, interview prep per job, and short narrated videos marked "AI voice".
+
+Key facts:
+
+- Platform: macOS 13 (Ventura) or later, on Apple silicon or Intel Macs. Windows and Linux versions are planned.
+- Requires a Claude plan that includes Claude Code. Usage counts toward that plan. JobCairn never sees or stores the user's Claude login.
+- Data: jobs, resumes, letters, scores and filed emails are saved as files in a folder the user chooses. What Claude reads goes to Anthropic under the user's own account terms. Identity and employment document folders are locked from Claude unless the user allows access for a set time.
+- Builds are signed with an Apple Developer ID and notarised by Apple. The install guide covers the first open.
+- Source code: https://github.com/JobCairn/jobcairn, under the GNU AGPL-3.0 licence.
+- JobCairn is an independent product. It isn't made by or affiliated with Anthropic.
+
+## Pages
+
+- [Home](https://jobcairn.github.io/): what JobCairn does, how it works, privacy and FAQ
+- [Install guide](https://jobcairn.github.io/install.html): download, first open, Claude setup, and the optional Chrome and Gmail connections
+- [Privacy](https://jobcairn.github.io/privacy.html): what the app does with your information
+- [Terms of use](https://jobcairn.github.io/terms.html): terms for using the app during early access
+
+## Download and help
+
+- [Latest release](https://github.com/JobCairn/jobcairn/releases/latest): pick the arm64 dmg for Apple silicon or the x64 dmg for Intel
+- [Questions and help](https://github.com/JobCairn/jobcairn/discussions): public GitHub Discussions

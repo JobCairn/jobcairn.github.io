@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JobCairn: job search app for Mac, built around Claude</title>
+  <meta name="description" content="A Mac app that finds jobs, scores your fit, flags visa sponsorship and tailors your resume, using your own Claude plan.">
+  <meta name="google-site-verification" content="gwmOzgkxykuEc5mSbmBdqx78M-Fj151VJLVzZQeJNdE">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0d0e11" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
+  <link rel="canonical" href="https://jobcairn.github.io/">
+  <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="public/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JobCairn">
+  <meta property="og:title" content="JobCairn: job search app for Mac, built around Claude">
+  <meta property="og:description" content="Find jobs, score your fit, check visa sponsorship, tailor your resume and prepare for interviews. A desktop app that works with your own Claude plan.">
+  <meta property="og:url" content="https://jobcairn.github.io/">
+  <meta property="og:image" content="https://jobcairn.github.io/public/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The JobCairn home screen for a fictional example workspace, with the pipeline and sponsorship mix.">
+  <meta property="og:video" content="https://jobcairn.github.io/public/video/jobcairn-in-90-seconds.mp4">
+  <meta property="og:video:secure_url" content="https://jobcairn.github.io/public/video/jobcairn-in-90-seconds.mp4">
+  <meta property="og:video:type" content="video/mp4">
+  <meta property="og:video:width" content="1920">
+  <meta property="og:video:height" content="1080">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JobCairn: job search app for Mac, built around Claude">
+  <meta name="twitter:description" content="Find jobs, score your fit, check visa sponsorship, tailor your resume and prepare for interviews. A desktop app that works with your own Claude plan.">
+  <meta name="twitter:image" content="https://jobcairn.github.io/public/og.png">
+  <meta name="twitter:image:alt" content="The JobCairn home screen for a fictional example workspace, with the pipeline and sponsorship mix.">
+  <link rel="preload" href="public/video/jobcairn-in-90-seconds-poster.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="public/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="public/fonts/geist-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="public/css/site.css?v=fb4c34a9">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://jobcairn.github.io/#org",
+      "name": "JobCairn",
+      "url": "https://jobcairn.github.io/",
+      "logo": "https://jobcairn.github.io/public/icon-512.png",
+      "sameAs": [
+        "https://github.com/JobCairn",
+        "https://github.com/JobCairn/jobcairn"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jobcairn.github.io/#website",
+      "url": "https://jobcairn.github.io/",
+      "name": "JobCairn",
+      "inLanguage": "en-AU",
+      "publisher": {
+        "@id": "https://jobcairn.github.io/#org"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://jobcairn.github.io/#app",
+      "name": "JobCairn",
+      "description": "A desktop app for macOS that keeps your whole job search in one folder on your computer. It finds jobs in your own Chrome, scores your fit, reads each ad for visa sponsorship wording, and tailors your resume and cover letter, using your own Claude plan.",
+      "url": "https://jobcairn.github.io/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "macOS 13 or later",
+      "softwareVersion": "0.2.0",
+      "downloadUrl": "https://github.com/JobCairn/jobcairn/releases/latest",
+      "installUrl": "https://jobcairn.github.io/install.html",
+      "screenshot": "https://jobcairn.github.io/public/og.png",
+      "inLanguage": "en-AU",
+      "publisher": {
+        "@id": "https://jobcairn.github.io/#org"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://jobcairn.github.io/#video",
+      "name": "JobCairn in 90 seconds",
+      "description": "JobCairn in 90 seconds, recorded in an example workspace and narrated with an AI voice. Alex Example and every company shown are fictional.",
+      "thumbnailUrl": "https://jobcairn.github.io/public/video/jobcairn-in-90-seconds-poster.webp",
+      "contentUrl": "https://jobcairn.github.io/public/video/jobcairn-in-90-seconds.mp4",
+      "uploadDate": "2026-10-12",
+      "duration": "PT1M30S",
+      "inLanguage": "en-AU",
+      "publisher": {
+        "@id": "https://jobcairn.github.io/#org"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://jobcairn.github.io/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which systems does it run on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "macOS 13 (Ventura) or later, on Apple silicon or Intel Macs. Windows and Linux versions are planned. See how to install."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the source code available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The source code is on GitHub at github.com/JobCairn/jobcairn under the GNU AGPL-3.0 licence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a Claude subscription?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. JobCairn does its reading and writing through Claude Code, signed in to your own Claude account, so you need a Claude plan that includes Claude Code. Usage counts toward that plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will it apply for jobs on my behalf?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It finds jobs, prepares your resume, cover letter and emails, and tracks each application. Nothing is sent until you approve it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it help if I need visa sponsorship?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It reads each ad for sponsorship and work-rights wording, sets aside ads that need rights you don't have, and scores how likely an employer is to sponsor. It reports what ads and public sources say. It isn't migration advice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is my data kept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In a folder on your computer that you choose. When Claude runs, what it reads goes to Anthropic under your Claude account's terms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it use my job site accounts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It searches in your own Chrome, where you're already signed in. It reads ads. Saving jobs on a site, applying and messaging stay with you."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="JobCairn home"><img src="public/favicon.svg" alt="" width="28" height="28">JobCairn</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a class="nav-install" href="install.html">Install<span class="nav-install__more"> guide</span></a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--primary btn--sm" href="https://github.com/JobCairn/jobcairn/releases/latest">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero__copy">
+          <h1 id="hero-title">Your job search, in <em>one folder</em> on your computer.</h1>
+          <p class="hero__lead">JobCairn finds jobs in your own Chrome, scores how well you fit, reads each ad for visa sponsorship wording, and tailors your resume and cover letter. <strong>It runs on your own Claude plan, and every file stays on your computer.</strong></p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="https://github.com/JobCairn/jobcairn/releases/latest">Download for macOS</a>
+            <a class="btn btn--secondary" href="#how">See how it works</a>
+          </div>
+          <p class="hero__meta">For macOS 13 or later; Windows and Linux coming soon. <a href="install.html">How to install</a></p>
+        </div>
+
+        <figure class="hero__shot showcase" data-showcase>
+          <div class="laptop">
+            <div class="laptop__lid">
+              <span class="laptop__cam" aria-hidden="true"></span>
+              <div class="laptop__screen">
+                <video class="showcase__full" controls preload="none" playsinline poster="public/video/jobcairn-in-90-seconds-poster.webp" aria-label="JobCairn in 90 seconds, a narrated tour">
+                  <source src="public/video/jobcairn-in-90-seconds.mp4" type="video/mp4">
+                  <track kind="captions" src="public/video/jobcairn-in-90-seconds.en.vtt" srclang="en" label="English">
+                  <p>Your browser can't play this video. <a href="public/video/jobcairn-in-90-seconds.mp4">Download it</a> instead.</p>
+                </video>
+                <video class="showcase__teaser" muted loop playsinline preload="none" poster="public/video/jobcairn-in-90-seconds-poster.webp" data-src="public/video/jobcairn-teaser.mp4" aria-hidden="true" tabindex="-1" hidden></video>
+                <div class="showcase__veil" hidden>
+                  <button class="showcase__play" type="button">
+                    <span class="showcase__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.8v14.4a1 1 0 0 0 1.5.86l12-7.2a1 1 0 0 0 0-1.72l-12-7.2A1 1 0 0 0 7 4.8z"/></svg></span>
+                    <span class="showcase__label"><strong>Watch the 90-second tour</strong><span>1:30 · sound and captions</span></span>
+                  </button>
+                </div>
+                <button class="showcase__back" type="button" hidden>Back to preview</button>
+                <button class="showcase__pause" type="button" hidden>
+                  <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+                  <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.8v14.4a1 1 0 0 0 1.5.86l12-7.2a1 1 0 0 0 0-1.72l-12-7.2A1 1 0 0 0 7 4.8z"/></svg>
+                  <span class="showcase__tag">Pause preview</span>
+                </button>
+              </div>
+            </div>
+            <div class="laptop__base" aria-hidden="true"><span class="laptop__lip"></span></div>
+          </div>
+          <figcaption class="caption hero__caption">JobCairn in 90 seconds, recorded in an example workspace and narrated with an AI voice. Alex Example and every company shown are fictional.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="how-title">Find, score, tailor, apply, prepare.</h2>
+          <p>The app follows the order of a real search. Claude does the reading and writing. You make every decision.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <div class="step__text">
+              <div class="step__group">
+                <svg class="cairn" viewBox="0 0 44 32" aria-hidden="true"><rect class="on" x="0" y="26" width="7" height="6" rx="1.5"/><rect x="9" y="21" width="7" height="11" rx="1.5"/><rect x="18" y="16" width="7" height="16" rx="1.5"/><rect x="27" y="11" width="7" height="21" rx="1.5"/><rect x="36" y="6" width="7" height="26" rx="1.5"/></svg>
+                <span class="label">Step 1 of 5</span>
+              </div>
+              <h3>Find jobs in your own Chrome</h3>
+              <p>Claude reads job boards such as SEEK, LinkedIn, Indeed and company career pages in your own browser, read-only, and saves each ad into your folder. You're responsible for following each site's terms.</p>
+              <ul>
+                <li>Searches run in the last 7 days are skipped.</li>
+                <li>Ads that need work rights you don't have are set aside, and you can still show them.</li>
+                <li>One set of filters, shared by Settings and Find jobs: places in order of preference, work mode, pay, job type, posted date, sponsorship only and companies to skip.</li>
+                <li>Found a job yourself? Paste its link and JobCairn fills in the details for you to check.</li>
+              </ul>
+            </div>
+            <div class="window">
+              <picture>
+                <source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="public/img/find-mobile-light.webp" width="1200" height="1040">
+                <source media="(max-width: 640px)" srcset="public/img/find-mobile-dark.webp" width="1200" height="1040">
+                <source media="(prefers-color-scheme: light)" srcset="public/img/find-light.webp" width="2000" height="1081">
+                <img src="public/img/find-dark.webp" width="2000" height="1081" loading="lazy" alt="The Jobs list: roles with work rights, location, salary, a fit score, sponsor status and application status.">
+              </picture>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__text">
+              <div class="step__group">
+                <svg class="cairn" viewBox="0 0 44 32" aria-hidden="true"><rect x="0" y="26" width="7" height="6" rx="1.5"/><rect class="on" x="9" y="21" width="7" height="11" rx="1.5"/><rect x="18" y="16" width="7" height="16" rx="1.5"/><rect x="27" y="11" width="7" height="21" rx="1.5"/><rect x="36" y="6" width="7" height="26" rx="1.5"/></svg>
+                <span class="label">Step 2 of 5</span>
+              </div>
+              <h3>Score your fit, with the evidence</h3>
+              <p>Each job gets a fit score and interview odds. Every must-have is marked met, partial or not met, with the line in your resume or profile that shows it.</p>
+              <ul>
+                <li>A plain recommendation: apply, tailor first, or skip.</li>
+                <li>The gaps, and what would change the score.</li>
+                <li>A sponsor score from the ad's wording and what's known about the employer.</li>
+              </ul>
+              <figure class="clip">
+                <video class="clip__video" controls preload="none" playsinline poster="public/video/find-and-score-poster.webp">
+                  <source src="public/video/find-and-score.mp4" type="video/mp4">
+                  <track kind="captions" src="public/video/find-and-score.en.vtt" srclang="en" label="English">
+                  <p>Your browser can't play this video. <a href="public/video/find-and-score.mp4">Download it</a> instead.</p>
+                </video>
+              </figure>
+            </div>
+            <div class="window">
+              <picture>
+                <source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="public/img/score-mobile-light.webp" width="1240" height="920">
+                <source media="(max-width: 640px)" srcset="public/img/score-mobile-dark.webp" width="1240" height="920">
+                <source media="(prefers-color-scheme: light)" srcset="public/img/score-light.webp" width="1856" height="1800">
+                <img src="public/img/score-dark.webp" width="1856" height="1800" loading="lazy" alt="A job's score card: fit 72 out of 100, interview odds 64 percent, and four must-haves with two met, one partial and one not met.">
+              </picture>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__text">
+              <div class="step__group">
+                <svg class="cairn" viewBox="0 0 44 32" aria-hidden="true"><rect x="0" y="26" width="7" height="6" rx="1.5"/><rect x="9" y="21" width="7" height="11" rx="1.5"/><rect class="on" x="18" y="16" width="7" height="16" rx="1.5"/><rect x="27" y="11" width="7" height="21" rx="1.5"/><rect x="36" y="6" width="7" height="26" rx="1.5"/></svg>
+                <span class="label">Step 3 of 5</span>
+              </div>
+              <h3>Tailor your resume and cover letter</h3>
+              <p>Claude drafts a version of your resume for the job, using only what's already in your resume and profile. You edit it with a live preview of the page.</p>
+              <ul>
+                <li>17 templates. The ATS-safe ones are one column, so tracking systems read them in order.</li>
+                <li>Download as PDF or Word.</li>
+                <li>A cover letter for the same job, in your words.</li>
+              </ul>
+            </div>
+            <div class="window">
+              <picture>
+                <source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="public/img/tailor-mobile-light.webp" width="1200" height="1040">
+                <source media="(max-width: 640px)" srcset="public/img/tailor-mobile-dark.webp" width="1200" height="1040">
+                <source media="(prefers-color-scheme: light)" srcset="public/img/tailor-light.webp" width="2000" height="1284">
+                <img src="public/img/tailor-dark.webp" width="2000" height="1284" loading="lazy" alt="The resume editor's Style tab: a grid of resume templates marked ATS-safe, beside a live preview of the resume page.">
+              </picture>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__text">
+              <div class="step__group">
+                <svg class="cairn" viewBox="0 0 44 32" aria-hidden="true"><rect x="0" y="26" width="7" height="6" rx="1.5"/><rect x="9" y="21" width="7" height="11" rx="1.5"/><rect x="18" y="16" width="7" height="16" rx="1.5"/><rect class="on" x="27" y="11" width="7" height="21" rx="1.5"/><rect x="36" y="6" width="7" height="26" rx="1.5"/></svg>
+                <span class="label">Step 4 of 5</span>
+              </div>
+              <h3>Apply, with your OK at every step</h3>
+              <p>Applications move from preparing, to waiting for your OK, to sent. Emails to recruiters are drafted for you to read and approve before anything goes out.</p>
+              <ul>
+                <li>Connect Gmail and job email is filed under the right job.</li>
+                <li>Follow-ups and interviews show on the home screen.</li>
+              </ul>
+              <figure class="clip">
+                <video class="clip__video" controls preload="none" playsinline poster="public/video/tailor-and-apply-poster.webp">
+                  <source src="public/video/tailor-and-apply.mp4" type="video/mp4">
+                  <track kind="captions" src="public/video/tailor-and-apply.en.vtt" srclang="en" label="English">
+                  <p>Your browser can't play this video. <a href="public/video/tailor-and-apply.mp4">Download it</a> instead.</p>
+                </video>
+              </figure>
+            </div>
+            <div class="window">
+              <picture>
+                <source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="public/img/apply-mobile-light.webp" width="1280" height="1380">
+                <source media="(max-width: 640px)" srcset="public/img/apply-mobile-dark.webp" width="1280" height="1380">
+                <source media="(prefers-color-scheme: light)" srcset="public/img/apply-light.webp" width="2000" height="1166">
+                <img src="public/img/apply-dark.webp" width="2000" height="1166" loading="lazy" alt="The Applications screen with tabs for To prepare, In progress, Waiting for your OK, Sent, Interviews and Closed.">
+              </picture>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__text">
+              <div class="step__group">
+                <svg class="cairn" viewBox="0 0 44 32" aria-hidden="true"><rect x="0" y="26" width="7" height="6" rx="1.5"/><rect x="9" y="21" width="7" height="11" rx="1.5"/><rect x="18" y="16" width="7" height="16" rx="1.5"/><rect x="27" y="11" width="7" height="21" rx="1.5"/><rect class="on" x="36" y="6" width="7" height="26" rx="1.5"/></svg>
+                <span class="label">Step 5 of 5</span>
+              </div>
+              <h3>Prepare for the interview</h3>
+              <p>JobCairn spots the skills your saved jobs ask for that your resume doesn't mention yet. Claude writes study guides with diagrams, interview prep for each job, and short narrated videos.</p>
+              <ul>
+                <li>Topics ranked by how many of your jobs ask for them.</li>
+                <li>Seven kinds of video, from a job walkthrough or a lesson to a practice pitch and your weekly recap.</li>
+                <li>Narration uses an AI voice, and every video carries an "AI voice" mark.</li>
+              </ul>
+              <figure class="clip">
+                <video class="clip__video" controls preload="none" playsinline poster="public/video/learn-and-prepare-poster.webp">
+                  <source src="public/video/learn-and-prepare.mp4" type="video/mp4">
+                  <track kind="captions" src="public/video/learn-and-prepare.en.vtt" srclang="en" label="English">
+                  <p>Your browser can't play this video. <a href="public/video/learn-and-prepare.mp4">Download it</a> instead.</p>
+                </video>
+              </figure>
+            </div>
+            <div class="window">
+              <picture>
+                <source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="public/img/prepare-mobile-light.webp" width="1400" height="1040">
+                <source media="(max-width: 640px)" srcset="public/img/prepare-mobile-dark.webp" width="1400" height="1040">
+                <source media="(prefers-color-scheme: light)" srcset="public/img/prepare-light.webp" width="2000" height="1311">
+                <img src="public/img/prepare-dark.webp" width="2000" height="1311" loading="lazy" alt="The Learn screen: suggested topics such as LLMs and Kubernetes with the share of jobs that ask for each, and study guides with progress.">
+              </picture>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="features-title">A few more things it does.</h2>
+          <p>One app for the whole search, so it doesn't live in ten browser tabs and a spreadsheet.</p>
+        </div>
+
+        <div class="fgroup">
+          <div class="spot">
+            <div class="spot__text">
+              <h3 class="fgroup__title">Bring in any job, and keep it tidy.</h3>
+              <h4>Add a job by link</h4>
+              <p>Paste a link from a job board or a company's careers page. JobCairn reads the ad and fills in the title, company, place, work mode, pay and job type, plus what the ad says about work rights, quoted word for word. You check it, then save.</p>
+              <p class="spot__note">Links from applicant systems such as Greenhouse and Lever are read straight away. SEEK, LinkedIn and Indeed ads are read in your own Chrome once you connect it. Anywhere else, paste the ad's text.</p>
+            </div>
+            <figure class="spot__shot">
+              <div class="window">
+                <picture>
+                  <source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="public/img/addjob-mobile-light.webp" width="864" height="1476">
+                  <source media="(max-width: 640px)" srcset="public/img/addjob-mobile-dark.webp" width="864" height="1476">
+                  <source media="(prefers-color-scheme: light)" srcset="public/img/addjob-light.webp" width="1632" height="1346">
+                  <img src="public/img/addjob-dark.webp" width="1632" height="1346" loading="lazy" alt="The Add a job dialog after reading an ad: title Applied AI Engineer, company Example Labs, location, hybrid work, a salary range, full time, and work rights marked Sponsorship offered with the ad's sentence quoted.">
+                </picture>
+              </div>
+            </figure>
+          </div>
+          <dl class="flist">
+            <div><dt>Visa sponsorship signals</dt><dd>Each ad is read for work-rights wording: sponsorship offered, open to visa holders, silent, or citizens and PR only. Built for people who need sponsorship in Australia.</dd></div>
+            <div><dt>A drop box for loose files</dt><dd>Drop in a file, like a cover letter you sent, and JobCairn suggests the folder it belongs in. You decide where it goes.</dd></div>
+            <div><dt>No double-ups, and Undo</dt><dd>The same ad, or the same job at the same company, isn't added twice. Deleted something by mistake? Undo it, or restore it from Recently deleted for 30 days.</dd></div>
+            <div><dt>Job mail, filed</dt><dd>Connect Gmail and each job email lands under its job. Anything unclear waits in Mail to sort.</dd></div>
+          </dl>
+        </div>
+
+        <div class="fgroup">
+          <div class="spot spot--flip">
+            <div class="spot__text">
+              <h3 class="fgroup__title">See and hear what's going on.</h3>
+              <h4>Watch Claude work</h4>
+              <p>While Claude searches, scores or writes, you see each step as it happens. When it's done, you see the files it made and Claude Code's own usage estimate for the run.</p>
+            </div>
+            <figure class="spot__shot">
+              <div class="window">
+                <picture>
+                  <source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="public/img/activity-mobile-light.webp" width="976" height="700">
+                  <source media="(max-width: 640px)" srcset="public/img/activity-mobile-dark.webp" width="976" height="700">
+                  <source media="(prefers-color-scheme: light)" srcset="public/img/activity-light.webp" width="1776" height="680">
+                  <img src="public/img/activity-dark.webp" width="1776" height="680" loading="lazy" alt="A finished company research run: six steps ticked off, from Starting Claude to Writing the company research, the file it made, and Claude Code's usage estimate.">
+                </picture>
+              </div>
+            </figure>
+          </div>
+          <dl class="flist">
+            <div><dt>Listen</dt><dd>Hear a job ad, a study guide, company research or your application documents read aloud. By default the voice runs on your Mac.</dd></div>
+            <div><dt>Videos with an AI voice</dt><dd>A job walkthrough, a company briefing, a lesson, interview prep, a practice "tell me about yourself" pitch and a weekly recap. Each one is clearly marked "AI voice".</dd></div>
+            <div><dt>Write with Claude</dt><dd>For job email, Claude drafts from your profile, resume and the job. Then make it shorter, warmer or more formal, or fix the grammar. Nothing is sent until you review and send it.</dd></div>
+            <div><dt>A home screen that keeps count</dt><dd>Your pipeline, sponsorship mix and what's due today, including the days left on your visa if you set a date.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="privacy" aria-labelledby="privacy-title">
+      <div class="wrap privacy">
+        <div>
+          <div class="section__head">
+            <h2 id="privacy-title">Your search stays on your computer.</h2>
+            <p>Your workspace is a folder on your computer. You can open it, back it up or move it like any other folder.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Files, not a cloud database</dt><dd>Jobs, resumes, letters, scores and filed emails are saved as files in your workspace folder.</dd></div>
+            <div><dt>Identity and employment documents are locked</dt><dd>JobCairn hides those two folders from Claude. If Claude needs something inside, like a visa expiry date, it asks and says what for. Allow it for 15, 30, 60 or 120 minutes, or deny it. Only that folder opens, and it locks again when the time is up.</dd></div>
+            <div><dt>Nothing goes out without your OK</dt><dd>Applications and emails wait for your approval. Searching reads job sites. It doesn't apply or message anyone.</dd></div>
+            <div><dt>No trackers on this site</dt><dd>This page loads no analytics, ads or third-party scripts.</dd></div>
+          </dl>
+        </div>
+        <figure>
+          <div class="window">
+            <picture>
+              <source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="public/img/privacy-mobile-light.webp" width="930" height="330">
+              <source media="(max-width: 640px)" srcset="public/img/privacy-mobile-dark.webp" width="930" height="330">
+              <source media="(prefers-color-scheme: light)" srcset="public/img/privacy-light.webp" width="2000" height="946">
+              <img src="public/img/privacy-dark.webp" width="2000" height="946" loading="lazy" alt="The Privacy screen: identity documents and employment records locked, and a request from Claude to read a visa expiry date, with a 15 minute time limit and Allow or Deny.">
+            </picture>
+          </div>
+          <figcaption class="caption">Claude asks to read one fact from a locked folder. You can allow it for a set time, or deny it.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="claude" aria-labelledby="claude-title">
+      <div class="wrap">
+        <div class="claude">
+          <h2 id="claude-title">Works with your Claude plan.</h2>
+          <div class="claude__body">
+            <p><strong>JobCairn uses Claude Code, signed in to your own Claude account.</strong> You need a Claude plan that includes Claude Code. JobCairn never sees or stores your login.</p>
+            <p>Each piece of work, like a score or a resume draft, counts toward your plan's usage limits. The app shows Claude Code's own usage estimate for each run, so you can see what a piece of work used.</p>
+            <p>What Claude reads to do the work goes to Anthropic under your own account's terms. Read <a href="https://www.anthropic.com/legal/consumer-terms" rel="noopener">Anthropic's consumer terms</a>.</p>
+            <p>JobCairn is an independent product. It isn't made by or affiliated with Anthropic.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="faq-title">Questions.</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Which systems does it run on?</summary>
+            <p>macOS 13 (Ventura) or later, on Apple silicon or Intel Macs. Windows and Linux versions are planned. See <a href="install.html">how to install</a>.</p>
+          </details>
+          <details>
+            <summary>Is the source code available?</summary>
+            <p>Yes. The source code is <a href="https://github.com/JobCairn/jobcairn" rel="noopener">on GitHub</a> under the GNU AGPL-3.0 licence.</p>
+          </details>
+          <details>
+            <summary>Do I need a Claude subscription?</summary>
+            <p>Yes. JobCairn does its reading and writing through Claude Code, signed in to your own Claude account, so you need a Claude plan that includes Claude Code. Usage counts toward that plan.</p>
+          </details>
+          <details>
+            <summary>Will it apply for jobs on my behalf?</summary>
+            <p>No. It finds jobs, prepares your resume, cover letter and emails, and tracks each application. Nothing is sent until you approve it.</p>
+          </details>
+          <details>
+            <summary>Does it help if I need visa sponsorship?</summary>
+            <p>Yes. It reads each ad for sponsorship and work-rights wording, sets aside ads that need rights you don't have, and scores how likely an employer is to sponsor. It reports what ads and public sources say. It isn't migration advice.</p>
+          </details>
+          <details>
+            <summary>Where is my data kept?</summary>
+            <p>In a folder on your computer that you choose. When Claude runs, what it reads goes to Anthropic under your Claude account's terms.</p>
+          </details>
+          <details>
+            <summary>Does it use my job site accounts?</summary>
+            <p>It searches in your own Chrome, where you're already signed in. It reads ads. Saving jobs on a site, applying and messaging stay with you.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download" aria-labelledby="download-title">
+      <div class="wrap contact">
+        <div class="section__head">
+          <h2 id="download-title">Get JobCairn for your Mac.</h2>
+          <p>Download JobCairn for your Mac and bring your own Claude plan. The <a href="install.html">install guide</a> walks you through it.</p>
+        </div>
+        <div class="contact__card">
+          <div class="contact__actions">
+            <a class="btn btn--primary" href="https://github.com/JobCairn/jobcairn/releases/latest">Download for macOS</a>
+            <a class="btn btn--secondary" href="https://github.com/JobCairn/jobcairn/discussions">Ask a question</a>
+          </div>
+          <p class="contact__soon">macOS 13 or later. Windows and Linux coming soon.</p>
+          <p class="contact__note"><strong>Discussions are for questions and help, and they're public.</strong> Don't post your email, phone or resume.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <div>
+        <a class="brand" href="#top"><img src="public/favicon.svg" alt="" width="28" height="28">JobCairn</a>
+        <p class="tagline">Your job search, in one folder on your computer.</p>
+        <p>© 2026 JobCairn</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="install.html">Install</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://github.com/JobCairn/jobcairn/discussions">GitHub Discussions</a>
+        <a href="https://github.com/JobCairn/jobcairn"><span aria-hidden="true">⭐ </span>Star on GitHub</a>
+        <a href="terms.html">Terms of use</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+      <p class="fine">Claude and Claude Code are trademarks of Anthropic. SEEK, LinkedIn and Indeed are trademarks of their owners; JobCairn isn't affiliated with or endorsed by any of them. Screenshots show a fictional example workspace. Fonts: <a href="public/fonts/OFL-instrument-serif.txt">Instrument Serif</a> and <a href="public/fonts/OFL-geist.txt">Geist</a>, under the SIL Open Font License.</p>
+    </div>
+  </footer>
+  <script>
+    // Hero showcase: a muted preview loop plays while the laptop is on screen, and the play button switches to the
+    // full narrated video with captions. Without this script the full video shows with its own controls.
+    (function () {
+      var fig = document.querySelector("[data-showcase]");
+      if (!fig || !("IntersectionObserver" in window)) return;
+      var full = fig.querySelector(".showcase__full"), teaser = fig.querySelector(".showcase__teaser");
+      var veil = fig.querySelector(".showcase__veil"), play = fig.querySelector(".showcase__play"), pause = fig.querySelector(".showcase__pause");
+      var back = fig.querySelector(".showcase__back"), tag = pause.querySelector(".showcase__tag");
+      var calm = matchMedia("(prefers-reduced-motion: reduce)").matches || (navigator.connection && navigator.connection.saveData);
+      var visible = false, userPaused = false;
+      full.removeAttribute("controls");
+      full.setAttribute("tabindex", "-1");
+      veil.hidden = false;
+      fig.classList.add("is-enhanced");
+      function runTeaser() {
+        if (calm || userPaused || !visible || fig.classList.contains("is-playing")) { teaser.pause(); return; }
+        if (!teaser.src) { teaser.src = teaser.dataset.src; teaser.hidden = false; pause.hidden = false; }
+        teaser.play().catch(function () {});
+      }
+      teaser.addEventListener("playing", function () { fig.classList.add("is-live"); });
+      // Start watching only after the page has loaded, so the preview never competes with the poster or fonts.
+      function watch() { new IntersectionObserver(function (es) { visible = es[0].isIntersecting; runTeaser(); }, { threshold: 0.35 }).observe(fig); }
+      if (document.readyState === "complete") watch(); else addEventListener("load", watch);
+      pause.addEventListener("click", function () {
+        userPaused = !userPaused;
+        pause.classList.toggle("is-paused", userPaused);
+        tag.textContent = userPaused ? "Play preview" : "Pause preview";
+        runTeaser();
+      });
+      function stop() {
+        var hadFocus = fig.contains(document.activeElement);
+        full.pause();
+        full.removeAttribute("controls");
+        full.setAttribute("tabindex", "-1");
+        fig.classList.remove("is-playing");
+        back.hidden = true;
+        veil.hidden = false;
+        if (hadFocus) play.focus({ preventScroll: true });
+        runTeaser();
+      }
+      play.addEventListener("click", function () {
+        fig.classList.add("is-playing");
+        teaser.pause();
+        veil.hidden = true;
+        full.setAttribute("controls", "");
+        full.removeAttribute("tabindex");
+        back.hidden = false;
+        if (full.textTracks[0]) full.textTracks[0].mode = "showing";
+        full.focus();
+        full.play().catch(function () {});
+      });
+      full.addEventListener("ended", stop);
+      back.addEventListener("click", stop);
+      document.addEventListener("visibilitychange", function () { if (!document.hidden) runTeaser(); });
+      fig.addEventListener("keydown", function (e) { if (e.key === "Escape" && fig.classList.contains("is-playing")) stop(); });
+    })();
+  </script>
+</body>
+</html>
