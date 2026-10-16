@@ -18,6 +18,7 @@ https://github.com/user-attachments/assets/2e3ae9be-a18c-4288-9b03-7cdf4d6b6984
 - **Flag visa sponsorship** wording in each ad, and set aside ads that need work rights you don't have.
 - **Tailor your resume and cover letter** from what's already in your resume and profile. Export to PDF or Word.
 - **Track applications** and file job email from Gmail under the right job. Nothing is sent without your OK.
+- **Work with recruiters:** find agencies and see where each was found, keep their mail together, and write to them from a template or with Claude.
 - **Prepare for interviews** with study guides, interview prep and short narrated videos.
 
 ## Links

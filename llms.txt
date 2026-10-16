@@ -11,6 +11,7 @@ What it does:
 - Reads each ad for work-rights wording (sponsorship offered, open to visa holders, silent, or citizens and PR only) and gives a sponsor score. It reports what ads and public sources say. It isn't migration advice.
 - Tailors a resume to a job using only what's already in the user's resume and profile, with 17 templates (the ATS-safe ones are one column), and exports PDF or Word. Drafts a matching cover letter.
 - Tracks applications from preparing, to waiting for the user's OK, to sent. With Gmail connected, job email is filed under the right job.
+- Works with recruiters: finds recruitment agencies from many sources and shows where each was found, with the page and date. The user can add agencies one at a time or as a list. Mail from an agency is filed with it and shown as one conversation. Emails to recruiters come from a template or are written by Claude with the user's note, optionally with a resume tailored for the agency. Only contact details recruiters publish are used, and nothing is sent without the user's OK.
 - Prepares for interviews: skill gaps across saved jobs, study guides, interview prep per job, and short narrated videos marked "AI voice".
 
 Key facts:

@@ -70,7 +70,7 @@
       "url": "https://jobcairn.github.io/",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "macOS 13 or later",
-      "softwareVersion": "0.2.0",
+      "softwareVersion": "0.3.0",
       "downloadUrl": "https://github.com/JobCairn/jobcairn/releases/latest",
       "installUrl": "https://jobcairn.github.io/install.html",
       "screenshot": "https://jobcairn.github.io/public/og.png",
@@ -131,6 +131,14 @@
         },
         {
           "@type": "Question",
+          "name": "Can it help me work with recruiters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Claude finds recruitment agencies that place people in your roles and shows where each was found. You can add your own, one at a time or as a list. Mail from an agency is kept with it, and Claude can write to them for you. JobCairn uses only the contact details recruiters publish, and nothing is sent until you approve it."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Does it help if I need visa sponsorship?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -167,6 +175,7 @@
       <a class="brand" href="#top" aria-label="JobCairn home"><img src="public/favicon.svg" alt="" width="28" height="28">JobCairn</a>
       <nav class="site-nav" aria-label="Main">
         <a href="#how">How it works</a>
+        <a href="#recruiters">Recruiters</a>
         <a href="#features">Features</a>
         <a href="#privacy">Privacy</a>
         <a class="nav-install" href="install.html">Install<span class="nav-install__more"> guide</span></a>
@@ -373,6 +382,69 @@
       </div>
     </section>
 
+    <section class="section" id="recruiters" aria-labelledby="recruiters-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="recruiters-title">Recruiters, in one place too.</h2>
+          <p>Agencies get their own list, like companies. Claude finds them and writes to them. You choose who to contact and what goes out.</p>
+        </div>
+
+        <div class="fgroup">
+          <div class="spot">
+            <div class="spot__text">
+              <h3 class="fgroup__title">Find agencies, and see where each one came from.</h3>
+              <h4>Find recruiters</h4>
+              <p>Choose how many agencies to look for. Claude searches the web, job boards, the industry body's member directory, government panels and the advertisers of jobs you've saved. Each agency shows where it was found, with the page and date.</p>
+              <p class="spot__note">Each agency has its own page with Overview, Contacts, Emails, Jobs and Timeline. Search and filter the list by tag, city, where it was found, or ads open to visa holders.</p>
+            </div>
+            <figure class="spot__shot">
+              <div class="window">
+                <picture>
+                  <source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="public/img/recruiter-overview-mobile-light.webp" width="1016" height="1436">
+                  <source media="(max-width: 640px)" srcset="public/img/recruiter-overview-mobile-dark.webp" width="1016" height="1436">
+                  <source media="(prefers-color-scheme: light)" srcset="public/img/recruiter-overview-light.webp" width="2000" height="1352">
+                  <img src="public/img/recruiter-overview-dark.webp" width="2000" height="1352" loading="lazy" alt="An agency's Overview tab for Acme Recruiting: what it's hiring for with its source, specialties, tags and city, and Found on, listing a saved job and the agency website, each dated 12 Jan 2026.">
+                </picture>
+              </div>
+            </figure>
+          </div>
+          <dl class="flist">
+            <div><dt>Add recruiter</dt><dd>Paste an agency's website, one of their job ads, or a name and email. Or paste a list, one agency per line, or a CSV file. An agency you already have is updated, not added twice.</dd></div>
+            <div><dt>Check recruiters</dt><dd>Claude fills in an agency's details from the agency's own pages.</dd></div>
+            <div><dt>Contacts at a glance</dt><dd>The Contacts tab shows the agency's people as cards, with its emails, phones, linked addresses and pages alongside.</dd></div>
+            <div><dt>Only what they publish</dt><dd>JobCairn uses only the contact details recruiters publish, and shows where each one was found.</dd></div>
+          </dl>
+        </div>
+
+        <div class="fgroup">
+          <div class="spot spot--flip">
+            <div class="spot__text">
+              <h3 class="fgroup__title">Write to them, with your OK.</h3>
+              <h4>Emails to recruiters, your way</h4>
+              <p>Use the template, or choose Have Claude write it and add anything you'd like to say or ask. For a general enquiry, attach one of your resumes, have Claude tailor one for the agency's specialties, or send none.</p>
+              <p class="spot__note">Every email waits for you to read it and approve it. Nothing is sent without your OK.</p>
+            </div>
+            <figure class="spot__shot">
+              <div class="window">
+                <picture>
+                  <source media="(max-width: 640px) and (prefers-color-scheme: light)" srcset="public/img/recruiter-email-mobile-light.webp" width="850" height="1184">
+                  <source media="(max-width: 640px)" srcset="public/img/recruiter-email-mobile-dark.webp" width="850" height="1184">
+                  <source media="(prefers-color-scheme: light)" srcset="public/img/recruiter-email-light.webp" width="1114" height="1110">
+                  <img src="public/img/recruiter-email-dark.webp" width="1114" height="1110" loading="lazy" alt="The Email Acme Recruiting dialog: the job it's about, Use the template or Have Claude write it, a box for anything to add or ask, options to tailor or attach a resume, and a question about sponsorship.">
+                </picture>
+              </div>
+            </figure>
+          </div>
+          <dl class="flist">
+            <div><dt>Recruiter mail, filed</dt><dd>Connect Gmail and mail from an agency is filed with it, by its website and the addresses it publishes.</dd></div>
+            <div><dt>A new address? Link it</dt><dd>When a recruiter writes from another address, link it from Mail to sort, or link their agency's whole domain.</dd></div>
+            <div><dt>One conversation per agency</dt><dd>The Emails tab shows everything between you and an agency, oldest to newest, with Reply.</dd></div>
+            <div><dt>A resume for the agency</dt><dd>Claude can tailor one of your resumes to the kinds of roles an agency fills.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="features" aria-labelledby="features-title">
       <div class="wrap">
         <div class="section__head">
@@ -500,6 +572,10 @@
             <p>No. It finds jobs, prepares your resume, cover letter and emails, and tracks each application. Nothing is sent until you approve it.</p>
           </details>
           <details>
+            <summary>Can it help me work with recruiters?</summary>
+            <p>Yes. Claude finds recruitment agencies that place people in your roles and shows where each was found. You can add your own, one at a time or as a list. Mail from an agency is kept with it, and Claude can write to them for you. JobCairn uses only the contact details recruiters publish, and nothing is sent until you approve it.</p>
+          </details>
+          <details>
             <summary>Does it help if I need visa sponsorship?</summary>
             <p>Yes. It reads each ad for sponsorship and work-rights wording, sets aside ads that need rights you don't have, and scores how likely an employer is to sponsor. It reports what ads and public sources say. It isn't migration advice.</p>
           </details>
@@ -542,6 +618,7 @@
       </div>
       <nav aria-label="Footer">
         <a href="#how">How it works</a>
+        <a href="#recruiters">Recruiters</a>
         <a href="#features">Features</a>
         <a href="install.html">Install</a>
         <a href="#faq">FAQ</a>
